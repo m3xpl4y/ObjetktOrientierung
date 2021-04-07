@@ -2,15 +2,14 @@ package at.maximilian.classes;
 
 public class FotoApparat {
     String brand;
-    double megaPixel;
+    String type;
     String countryOfOrigin;
+    double megaPixel;
     int iso;
     double display;
-    public static final int MIN_FOCAL_LENGTH = 10;
     int maxFocalLength;
-    String type;
+    public static final int MIN_FOCAL_LENGTH = 10;
     String owner;
-    String productSheet;
 
     public FotoApparat() {
     }
@@ -30,9 +29,6 @@ public class FotoApparat {
     }
 
     // GETTER & SETTER
-    public String getProductSheet() {
-        return productSheet;
-    }
 
     public String getType() {
         return type;
@@ -127,4 +123,31 @@ public class FotoApparat {
         machFoto();
     }
 
+    public void productSheet()
+    {
+        System.out.println("PRODUKTBLATT");
+        System.out.println("Marke: " + brand);
+        System.out.println("Typ: " + type);
+        System.out.println("Herkunftsland: " + countryOfOrigin);
+        System.out.println("MegaPixel: " + megaPixel);
+        System.out.println("ISO-Anzahl " + iso);
+        System.out.println("Display größe: " + display);
+        System.out.println("Minimale Brennweite: " + MIN_FOCAL_LENGTH);
+        System.out.println("Maximale Brennweite: " + maxFocalLength);
+        System.out.println("Name des Besitzers: " + owner);
+    }
+
+    @Override
+    public String toString() {
+        return "FotoApparat{" +
+                "brand='" + brand + '\'' +
+                ", type='" + type + '\'' +
+                ", countryOfOrigin='" + countryOfOrigin + '\'' +
+                ", megaPixel=" + megaPixel +
+                ", iso=" + iso +
+                ", display=" + display +
+                ", maxFocalLength=" + maxFocalLength +
+                ", owner='" + owner + '\'' +
+                '}';
+    }
 }

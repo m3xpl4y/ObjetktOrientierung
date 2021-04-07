@@ -5,7 +5,11 @@ import at.maximilian.classes.FotoApparat;
 public class Main {
 
     public static void main(String[] args) {
-        FotoApparat NikonD610 = new FotoApparat("Nikon", 24, "Japan", 6400, 8, 135);
-        NikonD610.selfTimer();
+        FotoApparat nikon = new FotoApparat("Nikon", 24.7, "Japan", 6400, 3.2, 135);
+        nikon.setType("D610");
+        nikon.setOwner("Maximilian");
+        nikon.selfTimer();
+        nikon.productSheet();
+        nikon.machFoto();
     }
 }
