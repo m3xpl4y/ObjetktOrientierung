@@ -110,7 +110,7 @@ public class FotoApparat {
     {
         System.out.println("KLICK");
     }
-    public void selbstauslöser()
+    public void selfTimer()
     {
         System.out.println("Bitte Lächeln!");
         for (int i = 5; i > 0; i--) {
