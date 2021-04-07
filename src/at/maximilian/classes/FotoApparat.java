@@ -12,6 +12,9 @@ public class FotoApparat {
     String owner;
     String productSheet;
 
+    public FotoApparat() {
+    }
+
     public FotoApparat(String marke, double megaPixel, String herkunftsland, int iso, double display, int maxBrennweite) {
         this.brand = marke;
         this.megaPixel = megaPixel;
@@ -19,6 +22,11 @@ public class FotoApparat {
         this.iso = iso;
         this.display = display;
         this.maxFocalLength = maxBrennweite;
+    }
+
+    public FotoApparat(String type, String owner) {
+        this.type = type;
+        this.owner = owner;
     }
 
     // GETTER & SETTER
