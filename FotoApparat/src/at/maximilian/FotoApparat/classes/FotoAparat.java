@@ -1,4 +1,4 @@
-package classes;
+package at.maximilian.FotoApparat.classes;
 
 public class FotoAparat {
     String brand;
@@ -12,8 +12,7 @@ public class FotoAparat {
     String owner;
 
     //CONSTRUCTORS
-    public FotoAparat() {
-    }
+
 
     public FotoAparat(String brand, String countryOfOrigin, double megaPixel, int iso, double display, int maxFocalLength) {
         this.brand = brand;
@@ -23,6 +22,8 @@ public class FotoAparat {
         this.display = display;
         this.maxFocalLength = maxFocalLength;
     }
+
+
 
     // GETTER & SETTER
 
@@ -46,9 +47,9 @@ public class FotoAparat {
         return brand;
     }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
+//   // public void setBrand(String brand) {
+//        this.brand = brand;
+//    }
 
     public double getMegaPixel() {
         return megaPixel;
