@@ -11,6 +11,7 @@ public class FotoAparat {
     public static final int MIN_FOCAL_LENGTH = 10;
     String owner;
 
+    //CONSTRUCTORS
     public FotoAparat() {
     }
 
@@ -23,10 +24,6 @@ public class FotoAparat {
         this.maxFocalLength = maxFocalLength;
     }
 
-    public FotoAparat(String type, String owner) {
-        this.type = type;
-        this.owner = owner;
-    }
     // GETTER & SETTER
 
     public String getType() {
