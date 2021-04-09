@@ -87,5 +87,6 @@ public class Vehicle {
     {
         System.out.println("Du kannst nicht Fahren da du nicht getankt hast");
         System.out.println("Bitte Treibstoff Liter angeben:");
+        this.fuelCapacity = 35;
     }
 }
