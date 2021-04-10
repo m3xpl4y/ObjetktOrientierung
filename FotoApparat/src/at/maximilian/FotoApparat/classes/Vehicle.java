@@ -11,6 +11,15 @@ public class Vehicle {
     double price;
     double fuelCapacity;
     int maxSpeed;
+    double consumation;
+
+    public double getConsumation() {
+        return consumation;
+    }
+
+    public void setConsumation(double consumation) {
+        this.consumation = consumation;
+    }
 
     public Vehicle() {
     }
@@ -70,23 +79,23 @@ public class Vehicle {
     public void setMaxSpeed(int maxSpeed) {
         this.maxSpeed = maxSpeed;
     }
-    public void driveVehicle()
+
+    public double driveVehicle(double a)
     {
-        if(this.fuelCapacity > 7.8)
+        a = consumation / 100 * a;
+        if(this.fuelCapacity > a)
         {
-            this.fuelCapacity = this.fuelCapacity - 7.8;
+            this.fuelCapacity = this.fuelCapacity - a;
         }
-        if(this.fuelCapacity < 7.8)
+        if(this.fuelCapacity < a)
         {
             System.out.println("Gehe Tanken");
             goRefuel();
-
         }
+        return this.fuelCapacity;
     }
     public void goRefuel()
     {
-        System.out.println("Du kannst nicht Fahren da du nicht getankt hast");
-        System.out.println("Bitte Treibstoff Liter angeben:");
-        this.fuelCapacity = 35;
+        System.out.println("Du hast kein Treibstoff mehr, du musst Tanken!");
     }
 }
