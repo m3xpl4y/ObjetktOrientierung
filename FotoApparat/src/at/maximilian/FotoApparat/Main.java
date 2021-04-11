@@ -3,14 +3,17 @@ package at.maximilian.FotoApparat;
 import at.maximilian.FotoApparat.classes.Car;
 import at.maximilian.FotoApparat.classes.InputScanner;
 
-import java.nio.channels.ScatteringByteChannel;
+import java.sql.SQLOutput;
 
 public class Main {
 
-    InputScanner scan = new InputScanner(); //if placed here, can be used outside the main method
+    static InputScanner scan = new InputScanner(); //if placed here, can be used outside the main method
 
     public static void main(String[] args) {
-
+        double fuel = 0;
+        double consum = 0;
+        int km = 0;
+        double speed = 0;
 //        String cameraName = "Nikon";
 //        FotoAparat nikon = new FotoAparat(cameraName, "Japan", 24.7,6400,3.2,135);
 //        nikon.setType("D610");
@@ -30,13 +33,17 @@ public class Main {
         car1.setType("525xD");
         car1.setConstructionYear(2013);
         car1.setPrice(25800);
-        car1.setFuelCapacity(55.8);
         car1.setHorsePower(218);
         car1.setMaxSpeed(247);
-        car1.setConsumation(7.8);
-
-        car1.driveVehicle(100);
-        System.out.println(car1.getFuelCapacity());
+        System.out.println("Bitte Tanken: ");
+        car1.setFuelCapacity(scan.inputDouble(fuel));
+        System.out.println("Sie haben " + car1.getFuelCapacity() + " Liter getankt!");
+        System.out.println("Wie hoch ist der Verbrauch auf 100 km?");
+        car1.setConsum(scan.inputDouble(consum));
+        System.out.println("Wie schnell möchten Sie fahren?");
+        car1.accelerate(scan.inputDouble(speed));
+        System.out.println("Wie weit möchten Sie fahren? KM Anzahl angeben");
+        car1.driveVehicle(scan.inputInt(km));
 
     }
 }
