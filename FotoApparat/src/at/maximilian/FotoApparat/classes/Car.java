@@ -21,4 +21,7 @@ public class Car extends Vehicle{
         return trunkCapacity;
     }
 
+    public void setTrunkCapacity(double trunkCapacity) {
+        this.trunkCapacity = trunkCapacity;
+    }
 }
