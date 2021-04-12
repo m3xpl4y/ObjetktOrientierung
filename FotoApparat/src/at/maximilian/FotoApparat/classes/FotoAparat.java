@@ -10,9 +10,13 @@ public class FotoAparat {
     int maxFocalLength;
     public static final int MIN_FOCAL_LENGTH = 10;
     String owner;
+    SdCard sdCard;
+
 
     //CONSTRUCTORS
+    public FotoAparat() {
 
+    }
 
     public FotoAparat(String brand, String countryOfOrigin, double megaPixel, int iso, double display, int maxFocalLength) {
         this.brand = brand;
@@ -22,10 +26,16 @@ public class FotoAparat {
         this.display = display;
         this.maxFocalLength = maxFocalLength;
     }
-
-
-
     // GETTER & SETTER
+
+
+    public SdCard getSdCard() {
+        return sdCard;
+    }
+
+    public void setSdCard(SdCard sdCard) {
+        this.sdCard = sdCard;
+    }
 
     public String getType() {
         return type;
@@ -47,9 +57,9 @@ public class FotoAparat {
         return brand;
     }
 
-//   // public void setBrand(String brand) {
-//        this.brand = brand;
-//    }
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
 
     public double getMegaPixel() {
         return megaPixel;
@@ -109,6 +119,7 @@ public class FotoAparat {
     //FUNKTIONEN
     public void machFoto()
     {
+        sdCard.sdSize = sdCard.sdSize - sdCard.getPicSize();
         System.out.println("KLICK");
     }
     public void selfTimer()

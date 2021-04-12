@@ -1,11 +1,6 @@
 package at.maximilian.FotoApparat;
 
-import at.maximilian.FotoApparat.classes.Car;
-import at.maximilian.FotoApparat.classes.FotoAparat;
-import at.maximilian.FotoApparat.classes.InputScanner;
-import at.maximilian.FotoApparat.classes.Vehicle;
-
-import java.sql.SQLOutput;
+import at.maximilian.FotoApparat.classes.*;
 
 public class Main {
 
@@ -14,12 +9,21 @@ public class Main {
     public static void main(String[] args) {
 
         String cameraName = "Nikon";
+
         FotoAparat nikon = new FotoAparat(cameraName, "Japan", 24.7,6400,3.2,135);
+        SdCard sdCard1 = new SdCard();
+        sdCard1.setSdBrand("SanDisk");
+        sdCard1.setSdSize(64);
+        sdCard1.setPicSize(4);
+        nikon.setSdCard(sdCard1);
         nikon.setType("D610");
         nikon.setOwner("Maximilian");
         nikon.selfTimer();
-        nikon.productSheet();
+
         nikon.machFoto();
+        System.out.println("Speicher SD größe: " + sdCard1.getSdSize());
+        nikon.productSheet();
+
 
 
 
