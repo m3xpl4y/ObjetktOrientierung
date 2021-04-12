@@ -7,27 +7,32 @@ public class FotoAparat {
     double megaPixel;
     int iso;
     double display;
-    int maxFocalLength;
-    public static final int MIN_FOCAL_LENGTH = 10;
     String owner;
     SdCard sdCard;
-
+    Objektiv objektiv;
 
     //CONSTRUCTORS
     public FotoAparat() {
 
     }
 
-    public FotoAparat(String brand, String countryOfOrigin, double megaPixel, int iso, double display, int maxFocalLength) {
+    public FotoAparat(String brand, String countryOfOrigin, double megaPixel, int iso, double display) {
         this.brand = brand;
         this.countryOfOrigin = countryOfOrigin;
         this.megaPixel = megaPixel;
         this.iso = iso;
         this.display = display;
-        this.maxFocalLength = maxFocalLength;
     }
     // GETTER & SETTER
 
+
+    public Objektiv getObjektiv() {
+        return objektiv;
+    }
+
+    public void setObjektiv(Objektiv objektiv) {
+        this.objektiv = objektiv;
+    }
 
     public SdCard getSdCard() {
         return sdCard;
@@ -99,23 +104,6 @@ public class FotoAparat {
         this.display = display;
     }
 
-    public static int getMinFocalLength() {
-        return MIN_FOCAL_LENGTH;
-    }
-
-    public int getMaxFocalLength() {
-        return maxFocalLength;
-    }
-    public void setMaxFocalLength(int maxFocalLength)
-    {
-        if(MIN_FOCAL_LENGTH > maxFocalLength)
-        {
-            System.out.println("Die mindest Brennweite muss größer als die maximal Brennweite sein!");
-        }
-        else{
-            this.maxFocalLength = maxFocalLength;
-        }
-    }
     //FUNKTIONEN
     public void machFoto()
     {
@@ -140,8 +128,8 @@ public class FotoAparat {
         System.out.println("MegaPixel: " + megaPixel);
         System.out.println("ISO-Anzahl " + iso);
         System.out.println("Display größe: " + display);
-        System.out.println("Minimale Brennweite: " + MIN_FOCAL_LENGTH);
-        System.out.println("Maximale Brennweite: " + maxFocalLength);
+        System.out.println("Minimale Brennweite: " + objektiv.getMinFocalLength());
+        System.out.println("Maximale Brennweite: " + objektiv.getMaxFocalLength());
         System.out.println("Name des Besitzers: " + owner);
     }
 
@@ -154,7 +142,7 @@ public class FotoAparat {
                 ", megaPixel=" + megaPixel +
                 ", iso=" + iso +
                 ", display=" + display +
-                ", maxFocalLength=" + maxFocalLength +
+                ", maxFocalLength=" + objektiv.getMaxFocalLength() +
                 ", owner='" + owner + '\'' +
                 '}';
     }
