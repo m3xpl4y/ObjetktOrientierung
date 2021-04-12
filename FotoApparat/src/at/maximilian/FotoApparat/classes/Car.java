@@ -8,7 +8,8 @@ public class Car extends Vehicle{
     public Car() {
     }
 
-    public Car(double trunkCapacity, double cubicCapacity) {
+    public Car(double trunkCapacity, double cubicCapacity, String brand) {
+        super.brand = brand;
         this.trunkCapacity = trunkCapacity;
         this.cubicCapacity = cubicCapacity;
     }
